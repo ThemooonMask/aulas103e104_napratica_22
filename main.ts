@@ -1,11 +1,11 @@
-let timer = 0
+let contador = 0
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(timer)
+    basic.showNumber(contador)
 })
 input.onButtonPressed(Button.B, function () {
-    timer = 0
+    contador = 0
 })
-function Sinalizar () {
+function sinalizar () {
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -17,10 +17,10 @@ function Sinalizar () {
 }
 basic.forever(function () {
     if (input.pinIsPressed(TouchPin.P0)) {
-        Sinalizar()
-        timer += 1
-        music.ringTone(523)
-        basic.pause(100)
+        sinalizar()
+        contador += 1
+        music.ringTone(262)
+        basic.pause(8)
         music.stopAllSounds()
     }
 })
